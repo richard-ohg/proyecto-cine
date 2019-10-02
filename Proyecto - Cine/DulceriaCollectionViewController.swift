@@ -1,8 +1,8 @@
 //
-//  CarteleraCollectionViewController.swift
+//  DulceriaCollectionViewController.swift
 //  Proyecto - Cine
 //
-//  Created by Ricardo Hernández González on 9/27/19.
+//  Created by Ricardo Hernández González on 10/2/19.
 //  Copyright © 2019 unam. All rights reserved.
 //
 
@@ -10,7 +10,7 @@ import UIKit
 
 private let reuseIdentifier = "Cell"
 
-class CarteleraCollectionViewController: UICollectionViewController {
+class DulceriaCollectionViewController: UICollectionViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -48,10 +48,10 @@ class CarteleraCollectionViewController: UICollectionViewController {
     }
 
     override func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: reuseIdentifier, for: indexPath) as! PeliculaCollectionViewCell
-    
-        cell.imagenPelicula.image = UIImage(named: "cine")
-        cell.nombrePelicula.text = "Pelicula"
+        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: reuseIdentifier, for: indexPath) as! DulceCollectionViewCell
+        
+        cell.imagen.image = UIImage(named: "cine")
+        cell.label.text = "Dulce"
     
         return cell
     }

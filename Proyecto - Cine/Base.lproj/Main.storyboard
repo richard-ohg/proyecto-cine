@@ -1,49 +1,55 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14490.70" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="YY0-5w-cN0">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14490.70" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="0Ae-NM-yRF">
     <device id="retina5_5" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14490.49"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--Collection View Controller-->
+        <!--Peliculas-->
         <scene sceneID="nau-xh-NUb">
             <objects>
-                <collectionViewController id="YY0-5w-cN0" sceneMemberID="viewController">
+                <collectionViewController id="YY0-5w-cN0" customClass="CarteleraCollectionViewController" customModule="Proyecto___Cine" customModuleProvider="target" sceneMemberID="viewController">
                     <collectionView key="view" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" id="rYR-Im-lHx">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="2Ga-fZ-hMh">
-                            <size key="itemSize" width="176" height="147"/>
+                            <size key="itemSize" width="184" height="173"/>
                             <size key="headerReferenceSize" width="0.0" height="0.0"/>
                             <size key="footerReferenceSize" width="0.0" height="0.0"/>
                             <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
                         </collectionViewFlowLayout>
                         <cells>
-                            <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="fPp-iE-kjj">
-                                <rect key="frame" x="0.0" y="0.0" width="176" height="147"/>
+                            <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="Cell" id="fPp-iE-kjj" customClass="PeliculaCollectionViewCell" customModule="Proyecto___Cine" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="0.0" width="184" height="173"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO">
-                                    <rect key="frame" x="0.0" y="0.0" width="176" height="147"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="184" height="173"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
                                         <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="UhW-dl-IXh">
-                                            <rect key="frame" x="11" y="0.0" width="153" height="94"/>
+                                            <rect key="frame" x="11" y="0.0" width="168" height="121"/>
                                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         </imageView>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="AVN-xc-Gm7">
-                                            <rect key="frame" x="11" y="106" width="153" height="21"/>
+                                            <rect key="frame" x="16" y="142" width="153" height="21"/>
                                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="25"/>
                                             <nil key="textColor"/>
                                             <nil key="highlightedColor"/>
                                         </label>
                                     </subviews>
                                 </view>
+                                <connections>
+                                    <outlet property="imagenPelicula" destination="UhW-dl-IXh" id="9Zv-xu-QwK"/>
+                                    <outlet property="nombrePelicula" destination="AVN-xc-Gm7" id="TsR-pz-Ebb"/>
+                                    <segue destination="tec-bf-nKH" kind="show" id="U6J-wE-psz"/>
+                                </connections>
                             </collectionViewCell>
                         </cells>
                         <connections>
@@ -51,10 +57,170 @@
                             <outlet property="delegate" destination="YY0-5w-cN0" id="SVw-kC-Pqz"/>
                         </connections>
                     </collectionView>
+                    <navigationItem key="navigationItem" title="Peliculas" id="e8o-ZS-HDR">
+                        <barButtonItem key="backBarButtonItem" title="Regresar" id="cDe-IA-b1n"/>
+                    </navigationItem>
+                    <simulatedTabBarMetrics key="simulatedBottomBarMetrics"/>
                 </collectionViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ScT-BQ-6Cj" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1341" y="24"/>
+            <point key="canvasLocation" x="4062.3188405797105" y="23.64130434782609"/>
+        </scene>
+        <!--View Controller-->
+        <scene sceneID="yuE-v6-0Yx">
+            <objects>
+                <viewController id="tec-bf-nKH" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="Vkc-40-bKX">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <viewLayoutGuide key="safeArea" id="yWW-VU-fjG"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="X0w-tt-Az2" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="4901.449275362319" y="25.271739130434785"/>
+        </scene>
+        <!--Tab Bar Controller-->
+        <scene sceneID="LmA-h1-s3t">
+            <objects>
+                <tabBarController automaticallyAdjustsScrollViewInsets="NO" id="0Ae-NM-yRF" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <tabBar key="tabBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="CXj-ft-HI4">
+                        <rect key="frame" x="0.0" y="0.0" width="1000" height="1000"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                        <color key="tintColor" cocoaTouchSystemColor="darkTextColor"/>
+                    </tabBar>
+                    <connections>
+                        <segue destination="Lxj-Bp-6gM" kind="relationship" relationship="viewControllers" id="wdR-QZ-0rc"/>
+                        <segue destination="er0-J3-P5Q" kind="relationship" relationship="viewControllers" id="NpK-pm-flB"/>
+                        <segue destination="31n-FO-M8W" kind="relationship" relationship="viewControllers" id="HRK-LW-FCO"/>
+                    </connections>
+                </tabBarController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="ugW-pP-LhA" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2247.826086956522" y="23.64130434782609"/>
+        </scene>
+        <!--Carrito-->
+        <scene sceneID="LIG-m0-lIg">
+            <objects>
+                <viewController id="31n-FO-M8W" customClass="DulcesViewController" customModule="Proyecto___Cine" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="8jb-Ef-ivu">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <accessibility key="accessibilityConfiguration" label="hola">
+                            <bool key="isElement" value="NO"/>
+                        </accessibility>
+                        <viewLayoutGuide key="safeArea" id="ele-Mm-gt0"/>
+                    </view>
+                    <tabBarItem key="tabBarItem" title="Carrito" image="carrito" selectedImage="carrito_selected" springLoaded="YES" id="b3u-ZZ-txm">
+                        <color key="badgeColor" name="findHighlightColor" catalog="System" colorSpace="catalog"/>
+                    </tabBarItem>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Ceg-eD-93p" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="3155" y="1690"/>
+        </scene>
+        <!--Dulceria-->
+        <scene sceneID="hy8-sz-8II">
+            <objects>
+                <collectionViewController id="E87-hR-all" customClass="DulceriaCollectionViewController" customModule="Proyecto___Cine" customModuleProvider="target" sceneMemberID="viewController">
+                    <collectionView key="view" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" id="6m2-m8-f36">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="grS-Z2-OkL">
+                            <size key="itemSize" width="184" height="173"/>
+                            <size key="headerReferenceSize" width="0.0" height="0.0"/>
+                            <size key="footerReferenceSize" width="0.0" height="0.0"/>
+                            <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
+                        </collectionViewFlowLayout>
+                        <cells>
+                            <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="Cell" id="xkC-8O-6ZD" customClass="DulceCollectionViewCell" customModule="Proyecto___Cine" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="0.0" width="184" height="173"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO">
+                                    <rect key="frame" x="0.0" y="0.0" width="184" height="173"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="iwQ-rm-eIQ">
+                                            <rect key="frame" x="9" y="0.0" width="168" height="121"/>
+                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        </imageView>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="KiT-CF-sVe">
+                                            <rect key="frame" x="0.0" y="133" width="177" height="21"/>
+                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="25"/>
+                                            <nil key="textColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                    </subviews>
+                                </view>
+                                <connections>
+                                    <outlet property="imagen" destination="iwQ-rm-eIQ" id="DiW-Np-Ope"/>
+                                    <outlet property="label" destination="KiT-CF-sVe" id="Kgu-4l-EI7"/>
+                                </connections>
+                            </collectionViewCell>
+                        </cells>
+                        <connections>
+                            <outlet property="dataSource" destination="E87-hR-all" id="DT5-Oy-Omo"/>
+                            <outlet property="delegate" destination="E87-hR-all" id="xFH-zI-gud"/>
+                        </connections>
+                    </collectionView>
+                    <navigationItem key="navigationItem" title="Dulceria" id="eHc-fi-osk">
+                        <barButtonItem key="backBarButtonItem" title="Regresar" id="kCN-Gf-zX5"/>
+                    </navigationItem>
+                </collectionViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="zvL-he-O8R" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="4060.8695652173915" y="869.83695652173924"/>
+        </scene>
+        <!--Cartelera-->
+        <scene sceneID="jji-FS-ip4">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="Lxj-Bp-6gM" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="Cartelera" image="cartelera" selectedImage="cartelera_selected" springLoaded="YES" id="D2Z-s3-YpC"/>
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="6nT-sQ-4mk">
+                        <rect key="frame" x="0.0" y="20" width="414" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="YY0-5w-cN0" kind="relationship" relationship="rootViewController" id="Hrm-vE-qGW"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="kNW-jX-UxJ" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="3155.072463768116" y="23.64130434782609"/>
+        </scene>
+        <!--Dulceria-->
+        <scene sceneID="92f-XV-0Yt">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="er0-J3-P5Q" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="Dulceria" image="dulceria" selectedImage="dulceria_selected" id="CuB-aw-oVm"/>
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="UEP-Wf-NkH">
+                        <rect key="frame" x="0.0" y="20" width="414" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="E87-hR-all" kind="relationship" relationship="rootViewController" id="uem-cz-5YR"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Vy0-O3-B2V" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="3154" y="870"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="carrito" width="32" height="32"/>
+        <image name="carrito_selected" width="25" height="25"/>
+        <image name="cartelera" width="25" height="25"/>
+        <image name="cartelera_selected" width="25" height="25"/>
+        <image name="dulceria" width="25" height="25"/>
+        <image name="dulceria_selected" width="25" height="25"/>
+    </resources>
 </document>
