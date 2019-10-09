@@ -18,9 +18,9 @@ class FuncionesTableViewController: UITableViewController {
 
         print("segunda vista")
         print(nameMovie!)
-        tableView.rowHeight = 200
+        tableView.rowHeight = 150
 //        tableView.estimatedRowHeight = 600
-        filterMovie = cartelera.filterForMovieName(cartelera: cartelera, movie: nameMovie!)
+        filterMovie = filterForMovieName(movie: nameMovie!)
         
     }
     
@@ -84,14 +84,21 @@ class FuncionesTableViewController: UITableViewController {
     }
     */
 
-    /*
+    
     // MARK: - Navigation
 
     // In a storyboard-based application, you will often want to do a little preparation before navigation
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
+        let myIndex = tableView.indexPathForSelectedRow?.row
+        let dest = segue.destination as! AddToCarMoviesViewController
+        dest.filterMovie = filterMovie[myIndex!]
+        
     }
-    */
+    
+    func filterForMovieName(movie: String) -> [Funcion] {
+        let filterMovie = cartelera.funciones.filter({$0.pelicula.titulo == movie})
+        return filterMovie
+    }
+ 
 
 }

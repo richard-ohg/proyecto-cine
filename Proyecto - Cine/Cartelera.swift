@@ -24,22 +24,22 @@ struct Sala{
     var cupo_max: Int
 }
 
-struct Funcion{
+struct Funcion: Equatable{
     var sala: Sala
     var hora_inicio: String
     var hora_fin: String
     var pelicula: Pelicula
     var cupo_disponible: Int
-    var precio: Int
+    var precioAdulto: Int
+    var precioNino: Int
+    
+    static func == (rhs: Funcion, lhs: Funcion) -> Bool {
+        return rhs.pelicula.titulo == lhs.pelicula.titulo && rhs.hora_inicio == lhs.hora_inicio && rhs.hora_fin == lhs.hora_fin && rhs.sala.tipo == lhs.sala.tipo
+    }
 }
 
 struct Cartelera{
     var funciones : [Funcion]
-    
-    func filterForMovieName(cartelera: Cartelera, movie: String) -> [Funcion] {
-        let filterMovie = cartelera.funciones.filter({$0.pelicula.titulo == movie})
-        return filterMovie
-    }
 }
 
 var salaVIP = Sala(tipo: "VIP", cupo_max: 50)
@@ -50,19 +50,15 @@ var jokerPelicula = Pelicula(poster: "joker.jpg", titulo: "Joker", clasificacion
 var itPelicula = Pelicula(poster: "it.jpg", titulo: "IT", clasificacion: "B15", duracion: 120, sinopsis: "El payaso que espanta", genero: "terror", valoracion: 3.5)
 var doraPelicula = Pelicula(poster: "dora.jpg", titulo: "Dora la ciudad perdida", clasificacion: "A", duracion: 90, sinopsis: "La morra que habla ingles", genero: "Familia", valoracion: 3.0)
 
-var funcionJoker1 = Funcion(sala: salaNormal, hora_inicio: "14:00", hora_fin: "16:00", pelicula: jokerPelicula, cupo_disponible: salaNormal.cupo_max - 5, precio: 50)
-var funcionJoker2 = Funcion(sala: salaVIP, hora_inicio: "15:00", hora_fin: "17:00", pelicula: jokerPelicula, cupo_disponible: salaVIP.cupo_max - 5, precio: 70)
-var funcionJoker3 = Funcion(sala: salaPremium, hora_inicio: "15:00", hora_fin: "17:00", pelicula: jokerPelicula, cupo_disponible: salaPremium.cupo_max - 5, precio: 60)
-var funcionIT1 = Funcion(sala: salaPremium, hora_inicio: "12:00", hora_fin: "14:00", pelicula: itPelicula, cupo_disponible: salaPremium.cupo_max - 5, precio: 60)
-var funcionIT2 = Funcion(sala: salaNormal, hora_inicio: "18:00", hora_fin: "20:00", pelicula: itPelicula, cupo_disponible: salaNormal.cupo_max - 5, precio: 50)
+var funcionJoker1 = Funcion(sala: salaNormal, hora_inicio: "14:00", hora_fin: "16:00", pelicula: jokerPelicula, cupo_disponible: salaNormal.cupo_max - 5, precioAdulto: 50, precioNino: 25)
+var funcionJoker2 = Funcion(sala: salaVIP, hora_inicio: "15:00", hora_fin: "17:00", pelicula: jokerPelicula, cupo_disponible: salaVIP.cupo_max - 5, precioAdulto: 70, precioNino: 35)
+var funcionJoker3 = Funcion(sala: salaPremium, hora_inicio: "15:00", hora_fin: "17:00", pelicula: jokerPelicula, cupo_disponible: salaPremium.cupo_max - 5, precioAdulto: 60, precioNino: 30)
+var funcionIT1 = Funcion(sala: salaPremium, hora_inicio: "12:00", hora_fin: "14:00", pelicula: itPelicula, cupo_disponible: salaPremium.cupo_max - 5, precioAdulto: 60, precioNino: 30)
+var funcionIT2 = Funcion(sala: salaNormal, hora_inicio: "18:00", hora_fin: "20:00", pelicula: itPelicula, cupo_disponible: salaNormal.cupo_max - 5, precioAdulto: 50, precioNino: 25)
 
-
-var cartelera = Cartelera(funciones: [funcionJoker1, funcionJoker2, funcionJoker3, funcionIT1, funcionIT2])
-
-var filt = cartelera.filterForMovieName(cartelera: cartelera, movie: "Joker")
 
 var movies: [Pelicula] = [jokerPelicula, itPelicula, doraPelicula]
 
-//for pel in filt{
-//    print(pel.pelicula.titulo)
-//}
+var cartelera = Cartelera(funciones: [funcionJoker1, funcionJoker2, funcionJoker3, funcionIT1, funcionIT2])
+
+

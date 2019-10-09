@@ -23,7 +23,6 @@ class CarteleraCollectionViewController: UICollectionViewController {
 
         // Do any additional setup after loading the view.
     }
-
     
     // MARK: - Navigation
 
@@ -39,6 +38,10 @@ class CarteleraCollectionViewController: UICollectionViewController {
         
         let segueNext = segue.destination as! FuncionesTableViewController
         segueNext.nameMovie = movies[myIndex].titulo
+    }
+    
+    @IBAction func unsegueCarteleraView(segue: UIStoryboardSegue){
+        
     }
     
     
@@ -69,6 +72,8 @@ class CarteleraCollectionViewController: UICollectionViewController {
     
         return cell
     }
+    
+    
 
     // MARK: UICollectionViewDelegate
 

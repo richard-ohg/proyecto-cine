@@ -8,7 +8,6 @@
 
 /* Begin PBXBuildFile section */
 		7701BE8F233E9DE10004C30D /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7701BE8E233E9DE10004C30D /* AppDelegate.swift */; };
-		7701BE91233E9DE10004C30D /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7701BE90233E9DE10004C30D /* ViewController.swift */; };
 		7701BE94233E9DE10004C30D /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7701BE92233E9DE10004C30D /* Main.storyboard */; };
 		7701BE96233E9DE30004C30D /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 7701BE95233E9DE30004C30D /* Assets.xcassets */; };
 		7701BE99233E9DE30004C30D /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7701BE97233E9DE30004C30D /* LaunchScreen.storyboard */; };
@@ -20,12 +19,13 @@
 		770E6DDC2344736600966298 /* DulceriaCollectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 770E6DDB2344736600966298 /* DulceriaCollectionViewController.swift */; };
 		770E6DDE234474C800966298 /* DulceCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 770E6DDD234474C800966298 /* DulceCollectionViewCell.swift */; };
 		77FE60EC234E4C11006BB15A /* Carrito.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77FE60EB234E4C11006BB15A /* Carrito.swift */; };
+		77FE60EE234E4DF4006BB15A /* AddToCarMoviesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77FE60ED234E4DF4006BB15A /* AddToCarMoviesViewController.swift */; };
+		77FE60F0234E737F006BB15A /* CarritoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77FE60EF234E737F006BB15A /* CarritoViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		7701BE8B233E9DE10004C30D /* Proyecto - Cine.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Proyecto - Cine.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		7701BE8E233E9DE10004C30D /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		7701BE90233E9DE10004C30D /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		7701BE93233E9DE10004C30D /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		7701BE95233E9DE30004C30D /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		7701BE98233E9DE30004C30D /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -38,6 +38,8 @@
 		770E6DDB2344736600966298 /* DulceriaCollectionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DulceriaCollectionViewController.swift; sourceTree = "<group>"; };
 		770E6DDD234474C800966298 /* DulceCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DulceCollectionViewCell.swift; sourceTree = "<group>"; };
 		77FE60EB234E4C11006BB15A /* Carrito.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Carrito.swift; sourceTree = "<group>"; };
+		77FE60ED234E4DF4006BB15A /* AddToCarMoviesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddToCarMoviesViewController.swift; sourceTree = "<group>"; };
+		77FE60EF234E737F006BB15A /* CarritoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CarritoViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -72,18 +74,19 @@
 			children = (
 				7701BE8E233E9DE10004C30D /* AppDelegate.swift */,
 				7701BE92233E9DE10004C30D /* Main.storyboard */,
-				77FE60EB234E4C11006BB15A /* Carrito.swift */,
+				77FE60EF234E737F006BB15A /* CarritoViewController.swift */,
 				7701BE95233E9DE30004C30D /* Assets.xcassets */,
 				7701BE97233E9DE30004C30D /* LaunchScreen.storyboard */,
 				7701BE9A233E9DE30004C30D /* Info.plist */,
-				7701BE90233E9DE10004C30D /* ViewController.swift */,
 				770402DC234D8F9D009B577B /* Cartelera.swift */,
 				7701BEA2233EA1250004C30D /* CarteleraCollectionViewController.swift */,
 				7701BEA0233EA0F30004C30D /* PeliculaCollectionViewCell.swift */,
 				770402E0234DABA6009B577B /* FuncionesTableViewController.swift */,
+				77FE60ED234E4DF4006BB15A /* AddToCarMoviesViewController.swift */,
 				770402DE234DAA30009B577B /* FuncionTableViewCell.swift */,
 				770E6DDB2344736600966298 /* DulceriaCollectionViewController.swift */,
 				770E6DDD234474C800966298 /* DulceCollectionViewCell.swift */,
+				77FE60EB234E4C11006BB15A /* Carrito.swift */,
 			);
 			path = "Proyecto - Cine";
 			sourceTree = "<group>";
@@ -167,7 +170,8 @@
 				770E6DDE234474C800966298 /* DulceCollectionViewCell.swift in Sources */,
 				770E6DDC2344736600966298 /* DulceriaCollectionViewController.swift in Sources */,
 				770402E1234DABA6009B577B /* FuncionesTableViewController.swift in Sources */,
-				7701BE91233E9DE10004C30D /* ViewController.swift in Sources */,
+				77FE60F0234E737F006BB15A /* CarritoViewController.swift in Sources */,
+				77FE60EE234E4DF4006BB15A /* AddToCarMoviesViewController.swift in Sources */,
 				7701BE8F233E9DE10004C30D /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
