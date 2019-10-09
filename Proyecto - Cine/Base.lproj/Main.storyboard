@@ -142,7 +142,7 @@
         <!--Carrito-->
         <scene sceneID="LIG-m0-lIg">
             <objects>
-                <viewController id="31n-FO-M8W" customClass="DulcesViewController" customModule="Proyecto___Cine" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="31n-FO-M8W" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8jb-Ef-ivu">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>

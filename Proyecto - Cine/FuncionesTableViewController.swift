@@ -17,9 +17,10 @@ class FuncionesTableViewController: UITableViewController {
         super.viewDidLoad()
 
         print("segunda vista")
+        print(nameMovie!)
         tableView.rowHeight = 200
 //        tableView.estimatedRowHeight = 600
-        filterMovie = cartelera.filterForMovieName(cartelera: cartelera, movie: "Joker")
+        filterMovie = cartelera.filterForMovieName(cartelera: cartelera, movie: nameMovie!)
         
     }
     
@@ -40,7 +41,7 @@ class FuncionesTableViewController: UITableViewController {
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "celda", for: indexPath) as! FuncionTableViewCell
 
-        cell.imagen.image = UIImage(named: "joker")
+        cell.imagen.image = UIImage(named: filterMovie[indexPath.row].pelicula.poster)
         cell.sala.text = filterMovie[indexPath.row].sala.tipo
         cell.horario.text = "De \(filterMovie[indexPath.row].hora_inicio) a las \(filterMovie[indexPath.row].hora_fin) "
 

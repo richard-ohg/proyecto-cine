@@ -19,6 +19,7 @@
 		770402E1234DABA6009B577B /* FuncionesTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 770402E0234DABA6009B577B /* FuncionesTableViewController.swift */; };
 		770E6DDC2344736600966298 /* DulceriaCollectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 770E6DDB2344736600966298 /* DulceriaCollectionViewController.swift */; };
 		770E6DDE234474C800966298 /* DulceCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 770E6DDD234474C800966298 /* DulceCollectionViewCell.swift */; };
+		77FE60EC234E4C11006BB15A /* Carrito.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77FE60EB234E4C11006BB15A /* Carrito.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -36,6 +37,7 @@
 		770402E0234DABA6009B577B /* FuncionesTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FuncionesTableViewController.swift; sourceTree = "<group>"; };
 		770E6DDB2344736600966298 /* DulceriaCollectionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DulceriaCollectionViewController.swift; sourceTree = "<group>"; };
 		770E6DDD234474C800966298 /* DulceCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DulceCollectionViewCell.swift; sourceTree = "<group>"; };
+		77FE60EB234E4C11006BB15A /* Carrito.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Carrito.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -70,6 +72,7 @@
 			children = (
 				7701BE8E233E9DE10004C30D /* AppDelegate.swift */,
 				7701BE92233E9DE10004C30D /* Main.storyboard */,
+				77FE60EB234E4C11006BB15A /* Carrito.swift */,
 				7701BE95233E9DE30004C30D /* Assets.xcassets */,
 				7701BE97233E9DE30004C30D /* LaunchScreen.storyboard */,
 				7701BE9A233E9DE30004C30D /* Info.plist */,
@@ -156,6 +159,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				77FE60EC234E4C11006BB15A /* Carrito.swift in Sources */,
 				770402DD234D8F9D009B577B /* Cartelera.swift in Sources */,
 				7701BEA3233EA1250004C30D /* CarteleraCollectionViewController.swift in Sources */,
 				770402DF234DAA30009B577B /* FuncionTableViewCell.swift in Sources */,

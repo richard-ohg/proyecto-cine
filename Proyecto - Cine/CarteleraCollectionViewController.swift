@@ -37,8 +37,8 @@ class CarteleraCollectionViewController: UICollectionViewController {
 //        let tablita = FuncionesTableViewController()
 //        tablita.nameMovie = movies[myIndex].titulo
         
-//        let segues = segue.destination as! FuncionesTableViewController
-//        segues.nameMovie = movies[myIndex].titulo
+        let segueNext = segue.destination as! FuncionesTableViewController
+        segueNext.nameMovie = movies[myIndex].titulo
     }
     
     
