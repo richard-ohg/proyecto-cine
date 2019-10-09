@@ -24,15 +24,29 @@ class CarteleraCollectionViewController: UICollectionViewController {
         // Do any additional setup after loading the view.
     }
 
-    /*
+    
     // MARK: - Navigation
 
     // In a storyboard-based application, you will often want to do a little preparation before navigation
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         // Get the new view controller using [segue destinationViewController].
         // Pass the selected object to the new view controller.
+        print("Index: \(collectionView.indexPathsForSelectedItems!.last!.item)")
+        let myIndex = collectionView.indexPathsForSelectedItems!.last!.item
+        
+//        let tablita = FuncionesTableViewController()
+//        tablita.nameMovie = movies[myIndex].titulo
+        
+//        let segues = segue.destination as! FuncionesTableViewController
+//        segues.nameMovie = movies[myIndex].titulo
     }
-    */
+    
+    
+ 
+//    override func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+//        print(indexPath.item)
+//        myindex = indexPath.item
+//    }
 
     // MARK: UICollectionViewDataSource
 
@@ -44,14 +58,14 @@ class CarteleraCollectionViewController: UICollectionViewController {
 
     override func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         // #warning Incomplete implementation, return the number of items
-        return 10
+        return movies.count
     }
 
     override func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: reuseIdentifier, for: indexPath) as! PeliculaCollectionViewCell
     
-        cell.imagenPelicula.image = UIImage(named: "cine")
-        cell.nombrePelicula.text = "Pelicula"
+        cell.imagenPelicula.image = UIImage(named: movies[indexPath.item].poster)
+        cell.nombrePelicula.text = movies[indexPath.item].titulo
     
         return cell
     }
