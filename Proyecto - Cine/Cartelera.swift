@@ -56,10 +56,11 @@ var funcionJoker2 = Funcion(sala: salaVIP, hora_inicio: "15:00", hora_fin: "17:0
 var funcionJoker3 = Funcion(sala: salaPremium, hora_inicio: "15:00", hora_fin: "17:00", pelicula: jokerPelicula, cupo_disponible: salaPremium.cupo_max - 5, precioAdulto: 60, precioNino: 30)
 var funcionIT1 = Funcion(sala: salaPremium, hora_inicio: "12:00", hora_fin: "14:00", pelicula: itPelicula, cupo_disponible: salaPremium.cupo_max - 5, precioAdulto: 60, precioNino: 30)
 var funcionIT2 = Funcion(sala: salaNormal, hora_inicio: "18:00", hora_fin: "20:00", pelicula: itPelicula, cupo_disponible: salaNormal.cupo_max - 5, precioAdulto: 50, precioNino: 25)
+var funcionDora1 = Funcion(sala: salaNormal, hora_inicio: "12:30", hora_fin: "14:00", pelicula: doraPelicula, cupo_disponible: salaNormal.cupo_max - 5, precioAdulto: 50, precioNino: 25)
 
 
 var movies: [Pelicula] = [jokerPelicula, itPelicula, doraPelicula]
 
-var cartelera = Cartelera(funciones: [funcionJoker1, funcionJoker2, funcionJoker3, funcionIT1, funcionIT2])
+var cartelera = Cartelera(funciones: [funcionJoker1, funcionJoker2, funcionJoker3, funcionIT1, funcionIT2, funcionDora1])
 
 

@@ -18,7 +18,7 @@ class FuncionesTableViewController: UITableViewController {
 
         print("segunda vista")
         print(nameMovie!)
-        tableView.rowHeight = 150
+        tableView.rowHeight = 190
 //        tableView.estimatedRowHeight = 600
         filterMovie = filterForMovieName(movie: nameMovie!)
         
@@ -43,7 +43,9 @@ class FuncionesTableViewController: UITableViewController {
 
         cell.imagen.image = UIImage(named: filterMovie[indexPath.row].pelicula.poster)
         cell.sala.text = filterMovie[indexPath.row].sala.tipo
-        cell.horario.text = "De \(filterMovie[indexPath.row].hora_inicio) a las \(filterMovie[indexPath.row].hora_fin) "
+        cell.horario.text = "Horario: \(filterMovie[indexPath.row].hora_inicio) - \(filterMovie[indexPath.row].hora_fin) "
+        cell.precioAdulto.text = "Precio Adulto: \(filterMovie[indexPath.row].precioAdulto)"
+        cell.precioNino.text = "Precio Niño: \(filterMovie[indexPath.row].precioNino)"
 
         return cell
     }
@@ -90,7 +92,7 @@ class FuncionesTableViewController: UITableViewController {
     // In a storyboard-based application, you will often want to do a little preparation before navigation
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         let myIndex = tableView.indexPathForSelectedRow?.row
-        let dest = segue.destination as! AddToCarMoviesViewController
+        let dest = segue.destination as! AgregarCarritoPeliculasViewController
         dest.filterMovie = filterMovie[myIndex!]
         
     }

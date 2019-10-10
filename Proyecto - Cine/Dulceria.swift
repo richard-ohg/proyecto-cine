@@ -8,6 +8,7 @@
 
 import UIKit
 
-struct Dulceria {
+struct Dulce {
     var name: String
+    var price: Int
 }

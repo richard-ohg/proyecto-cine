@@ -8,7 +8,7 @@
 
 import UIKit
 
-class AddToCarMoviesViewController: UIViewController {
+class AgregarCarritoPeliculasViewController: UIViewController {
 
     var filterMovie: Funcion!
     var counterAdults: Int = 0
@@ -68,12 +68,29 @@ class AddToCarMoviesViewController: UIViewController {
         if let index = getIndex(function: filterMovie){
             cartelera.funciones[index].cupo_disponible -= (counterAdults + counterChild)
         }
+        
         print("Quieres \(counterAdults) boletos de adultos y \(counterChild) boletos de niños")
-        carrito.funcionesBoletosTotal[filterMovie] = (counterAdults, counterChild)
+
+        if counterChild == 0 && counterAdults == 0{
+            buildAlert(msg: "Debes elegir al menos un boleto")
+        }else{
+            carrito.funcionesBoletosTotal[filterMovie] = (counterAdults, counterChild)
+        }
+        
     }
     
     func getIndex(function: Funcion) -> Int?{
         return cartelera.funciones.firstIndex(where: {$0 == function})
+    }
+    
+    func buildAlert(msg: String){
+        let alerta = UIAlertController(title: "Error", message: msg, preferredStyle: .alert)
+        
+        let okAction = UIAlertAction(title: "Ok", style: .default, handler: nil)
+        
+        alerta.addAction(okAction)
+        
+        present(alerta, animated: true, completion: nil)
     }
     
     

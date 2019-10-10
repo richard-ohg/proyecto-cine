@@ -12,8 +12,18 @@ struct Carrito {
     var funcionesBoletosTotal = [Funcion: (Int, Int)]()
 //    var dulcesPrecioTotal: [Dulce: Double]
     
-    func total() -> Double{
-        return 1.0
+    func total() -> Int{
+        var count = 0
+        for element in funcionesBoletosTotal{
+            count += (element.value.0 * element.key.precioAdulto) + (element.value.1 * element.key.precioNino)
+        }
+        return count
+    }
+    
+    func totalPartial(index: Int) -> Int{
+        let array = Array(funcionesBoletosTotal)
+        
+        return (array[index].key.precioAdulto * array[index].value.0) + (array[index].key.precioNino * array[index].value.1)
     }
 }
 

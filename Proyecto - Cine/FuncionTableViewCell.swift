@@ -13,6 +13,8 @@ class FuncionTableViewCell: UITableViewCell {
     @IBOutlet weak var imagen: UIImageView!
     @IBOutlet weak var sala: UILabel!
     @IBOutlet weak var horario: UILabel!
+    @IBOutlet weak var precioAdulto: UILabel!
+    @IBOutlet weak var precioNino: UILabel!
     
     override func awakeFromNib() {
         super.awakeFromNib()
