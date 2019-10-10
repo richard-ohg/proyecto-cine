@@ -8,7 +8,7 @@
 
 import UIKit
 
-struct Pelicula{
+struct Pelicula: Hashable{
     var poster: String
     var titulo: String
     var clasificacion: String
@@ -18,13 +18,13 @@ struct Pelicula{
     var valoracion: Double
 }
 
-struct Sala{
+struct Sala: Hashable{
     var tipo: String
     // horarios_reservados
     var cupo_max: Int
 }
 
-struct Funcion: Equatable{
+struct Funcion: Hashable{
     var sala: Sala
     var hora_inicio: String
     var hora_fin: String
@@ -37,6 +37,7 @@ struct Funcion: Equatable{
         return rhs.pelicula.titulo == lhs.pelicula.titulo && rhs.hora_inicio == lhs.hora_inicio && rhs.hora_fin == lhs.hora_fin && rhs.sala.tipo == lhs.sala.tipo
     }
 }
+
 
 struct Cartelera{
     var funciones : [Funcion]

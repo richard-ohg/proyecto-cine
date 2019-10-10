@@ -9,12 +9,15 @@
 import UIKit
 
 struct Carrito {
-    var precio: Int
-    var funciones: [Funcion]?
-//    var dulces: []
-    
+    var funcionesBoletosTotal = [Funcion: (Int, Int)]()
+//    var dulcesPrecioTotal: [Dulce: Double]
     
     func total() -> Double{
         return 1.0
     }
 }
+
+var carrito = Carrito()
+
+
+

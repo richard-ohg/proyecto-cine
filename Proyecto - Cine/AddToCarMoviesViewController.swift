@@ -69,6 +69,7 @@ class AddToCarMoviesViewController: UIViewController {
             cartelera.funciones[index].cupo_disponible -= (counterAdults + counterChild)
         }
         print("Quieres \(counterAdults) boletos de adultos y \(counterChild) boletos de niños")
+        carrito.funcionesBoletosTotal[filterMovie] = (counterAdults, counterChild)
     }
     
     func getIndex(function: Funcion) -> Int?{
