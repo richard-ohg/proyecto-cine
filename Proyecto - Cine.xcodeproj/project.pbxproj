@@ -16,6 +16,7 @@
 		770402DD234D8F9D009B577B /* Cartelera.swift in Sources */ = {isa = PBXBuildFile; fileRef = 770402DC234D8F9D009B577B /* Cartelera.swift */; };
 		770402DF234DAA30009B577B /* FuncionTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 770402DE234DAA30009B577B /* FuncionTableViewCell.swift */; };
 		770402E1234DABA6009B577B /* FuncionesTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 770402E0234DABA6009B577B /* FuncionesTableViewController.swift */; };
+		77069F1E234EFB3A004137C6 /* AgregarCarritoDulceViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77069F1D234EFB3A004137C6 /* AgregarCarritoDulceViewController.swift */; };
 		770E6DDC2344736600966298 /* DulceriaCollectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 770E6DDB2344736600966298 /* DulceriaCollectionViewController.swift */; };
 		770E6DDE234474C800966298 /* DulceCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 770E6DDD234474C800966298 /* DulceCollectionViewCell.swift */; };
 		77FE60EC234E4C11006BB15A /* Carrito.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77FE60EB234E4C11006BB15A /* Carrito.swift */; };
@@ -36,6 +37,7 @@
 		770402DC234D8F9D009B577B /* Cartelera.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Cartelera.swift; sourceTree = "<group>"; };
 		770402DE234DAA30009B577B /* FuncionTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FuncionTableViewCell.swift; sourceTree = "<group>"; };
 		770402E0234DABA6009B577B /* FuncionesTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FuncionesTableViewController.swift; sourceTree = "<group>"; };
+		77069F1D234EFB3A004137C6 /* AgregarCarritoDulceViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AgregarCarritoDulceViewController.swift; sourceTree = "<group>"; };
 		770E6DDB2344736600966298 /* DulceriaCollectionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DulceriaCollectionViewController.swift; sourceTree = "<group>"; };
 		770E6DDD234474C800966298 /* DulceCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DulceCollectionViewCell.swift; sourceTree = "<group>"; };
 		77FE60EB234E4C11006BB15A /* Carrito.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Carrito.swift; sourceTree = "<group>"; };
@@ -88,6 +90,7 @@
 				77FE60F1234EAF3E006BB15A /* Dulceria.swift */,
 				770E6DDB2344736600966298 /* DulceriaCollectionViewController.swift */,
 				770E6DDD234474C800966298 /* DulceCollectionViewCell.swift */,
+				77069F1D234EFB3A004137C6 /* AgregarCarritoDulceViewController.swift */,
 				77FE60EB234E4C11006BB15A /* Carrito.swift */,
 				77FE60EF234E737F006BB15A /* CarritoViewController.swift */,
 			);
@@ -171,6 +174,7 @@
 				7701BEA3233EA1250004C30D /* CarteleraCollectionViewController.swift in Sources */,
 				770402DF234DAA30009B577B /* FuncionTableViewCell.swift in Sources */,
 				7701BEA1233EA0F30004C30D /* PeliculaCollectionViewCell.swift in Sources */,
+				77069F1E234EFB3A004137C6 /* AgregarCarritoDulceViewController.swift in Sources */,
 				770E6DDE234474C800966298 /* DulceCollectionViewCell.swift in Sources */,
 				770E6DDC2344736600966298 /* DulceriaCollectionViewController.swift in Sources */,
 				770402E1234DABA6009B577B /* FuncionesTableViewController.swift in Sources */,

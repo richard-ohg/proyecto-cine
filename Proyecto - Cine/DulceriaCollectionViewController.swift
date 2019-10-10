@@ -24,15 +24,16 @@ class DulceriaCollectionViewController: UICollectionViewController {
         // Do any additional setup after loading the view.
     }
 
-    /*
+    
     // MARK: - Navigation
 
     // In a storyboard-based application, you will often want to do a little preparation before navigation
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using [segue destinationViewController].
-        // Pass the selected object to the new view controller.
+        let myIndex = collectionView.indexPathsForSelectedItems!.last!.item
+        let dest = segue.destination as! AgregarCarritoDulceViewController
+        dest.dulce = dulceria.dulces[myIndex]
     }
-    */
+ 
 
     // MARK: UICollectionViewDataSource
 
@@ -44,14 +45,14 @@ class DulceriaCollectionViewController: UICollectionViewController {
 
     override func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         // #warning Incomplete implementation, return the number of items
-        return 10
+        return dulceria.dulces.count
     }
 
     override func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: reuseIdentifier, for: indexPath) as! DulceCollectionViewCell
         
-        cell.imagen.image = UIImage(named: "cine")
-        cell.label.text = "Dulce"
+        cell.label.text = dulceria.dulces[indexPath.row].name
+        cell.imagen.image = UIImage(named: dulceria.dulces[indexPath.row].imagen)
     
         return cell
     }

@@ -65,10 +65,9 @@ class AgregarCarritoPeliculasViewController: UIViewController {
     }
     
     @IBAction func addToCar(_ sender: UIButton) {
-        if let index = getIndex(function: filterMovie){
-            cartelera.funciones[index].cupo_disponible -= (counterAdults + counterChild)
-        }
-        
+
+        cartelera.funciones[index!].cupo_disponible -= (counterAdults + counterChild)
+
         print("Quieres \(counterAdults) boletos de adultos y \(counterChild) boletos de niños")
 
         if counterChild == 0 && counterAdults == 0{
