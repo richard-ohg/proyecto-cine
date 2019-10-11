@@ -70,6 +70,7 @@ class CarteleraCollectionViewController: UICollectionViewController {
         cell.imagenPelicula.image = UIImage(named: movies[indexPath.item].poster)
         cell.nombrePelicula.text = movies[indexPath.item].titulo
     
+        cell.backgroundColor = .black
         return cell
     }
     

@@ -42,7 +42,7 @@ class FuncionesTableViewController: UITableViewController {
         let cell = tableView.dequeueReusableCell(withIdentifier: "celda", for: indexPath) as! FuncionTableViewCell
 
         cell.imagen.image = UIImage(named: filterMovie[indexPath.row].pelicula.poster)
-        cell.sala.text = filterMovie[indexPath.row].sala.tipo
+        cell.sala.text = "Sala: \(filterMovie[indexPath.row].sala.tipo)"
         cell.horario.text = "Horario: \(filterMovie[indexPath.row].hora_inicio) - \(filterMovie[indexPath.row].hora_fin) "
         cell.precioAdulto.text = "Precio Adulto: \(filterMovie[indexPath.row].precioAdulto)"
         cell.precioNino.text = "Precio Niño: \(filterMovie[indexPath.row].precioNino)"

@@ -23,10 +23,10 @@ struct Dulceria {
     var dulces: [Dulce]
 }
 
-var palomitas = Dulce(name: "palomitas", price: 28, imagen: "palomitas.jpg", cantidad: 5)
-var refresco = Dulce(name: "refresco", price: 28, imagen: "refrescos.jpg", cantidad: 5)
-var mandm = Dulce(name: "m&m", price: 20, imagen: "m&m.jpg", cantidad: 5)
-var nachos = Dulce(name: "nachos", price: 25, imagen: "nachos.jpg", cantidad: 5)
-var hotdog = Dulce(name: "hotdog", price: 30, imagen: "hotdog.jpg", cantidad: 5)
+var palomitas = Dulce(name: "Palomitas", price: 28, imagen: "palomitas.jpg", cantidad: 5)
+var refresco = Dulce(name: "Refresco", price: 28, imagen: "refrescos.jpg", cantidad: 5)
+var mandm = Dulce(name: "M&M", price: 20, imagen: "m&m.jpg", cantidad: 5)
+var nachos = Dulce(name: "Nachos", price: 25, imagen: "nachos.jpg", cantidad: 5)
+var hotdog = Dulce(name: "HotDog", price: 30, imagen: "hotdog.jpg", cantidad: 5)
 
 var dulceria = Dulceria(dulces: [palomitas, refresco, mandm, nachos, hotdog])

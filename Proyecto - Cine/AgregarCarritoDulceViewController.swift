@@ -51,13 +51,29 @@ class AgregarCarritoDulceViewController: UIViewController {
     }
     
     @IBAction func agregarCarrito(_ sender: UIButton) {
-        dulceria.dulces[index!].cantidad -= contador
-        carrito.dulcesCantidadTotal[dulce] = contador
-        print("Compraste \(contador) \(dulce.name) ")
-        navigationController?.popViewController(animated: true)
+        
+//        print("Compraste \(contador) \(dulce.name) ")
+        if contador == 0{
+            buildAlert(msg: "Debes elegir al menos un boleto")
+        }else{
+//            carrito.funcionesBoletosTotal[filterMovie] = (counterAdults, counterChild)
+            dulceria.dulces[index!].cantidad -= contador
+            carrito.dulcesCantidadTotal[dulce] = contador
+            navigationController?.popViewController(animated: true)
+        }
     }
     
     func getIndex(candy: Dulce) -> Int?{
         return dulceria.dulces.firstIndex(where: {$0 == candy})
+    }
+    
+    func buildAlert(msg: String){
+        let alerta = UIAlertController(title: "Error", message: msg, preferredStyle: .alert)
+        
+        let okAction = UIAlertAction(title: "Ok", style: .default, handler: nil)
+        
+        alerta.addAction(okAction)
+        
+        present(alerta, animated: true, completion: nil)
     }
 }
