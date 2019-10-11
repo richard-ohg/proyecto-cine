@@ -71,8 +71,8 @@ class AgregarCarritoPeliculasViewController: UIViewController {
             present(Carrito.shared.buildAlert(msg: "Debes elegir al menos un boleto"), animated: true, completion: nil)
         }else{
             Cartelera.shared.arrayFunctions[index].cupo_disponible -= (counterAdults + counterChild)
-//            carrito.funcionesBoletosTotal[filterMovie] = (counterAdults, counterChild)
             Carrito.shared.addFunction(item: filterMovie, tickets: (counterAdults, counterChild))
+            Carrito.shared.total()
         }
         
     }

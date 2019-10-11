@@ -22,27 +22,32 @@ class CarritoViewController: UIViewController{
         tableProducts.delegate = self
         tableProducts.dataSource = self
         
-        print("Vista del carrito")
-        
-        totalLabel.alpha = 0
-//        tableProducts.rowHeight = 200.0
+//        print("Vista del carrito")
      
     }
     
     override func viewWillAppear(_ animated: Bool) {
-        print("Vista recargada del carrito")
+//        print("Vista recargada del carrito")
         arrayFunctions = Array(Carrito.shared.funcionesBoletosTotal)
         arrayCandy = Array(Carrito.shared.dulcesCantidadTotal)
         
+        totalLabel.text = "Total $\(Carrito.shared.tot)"
         tableProducts.reloadData()
     }
     
-    @IBAction func calculateTotal(_ sender: UIButton) {
-//        for element in array{
-//            totalLabel.text = String((element.value.0 * element.key.precioAdulto) + (element.value.1 * element.key.precioNino))
-//        }
-        totalLabel.text = "Total: $\(Carrito.shared.total())"
-        totalLabel.alpha = 1
+    @IBAction func buy(_ sender: UIButton) {
+        let alerta = UIAlertController(title: "Successful", message: "Tu compra se realizó con éxito", preferredStyle: .alert)
+        
+        let okAction = UIAlertAction(title: "Ok", style: .default) { (action) in
+            
+            Carrito.shared.removeAll()
+            self.tableProducts.reloadData()
+            Carrito.shared.tot = 0
+            self.totalLabel.text = "Total: $0"
+        }
+        
+        alerta.addAction(okAction)
+        present(alerta, animated: true, completion: nil)
     }
     
 }
@@ -57,15 +62,15 @@ extension CarritoViewController: UITableViewDelegate, UITableViewDataSource{
         
         if indexPath.row < Carrito.shared.funcionesBoletosTotal.count{
             
-            let ticketAdults = (arrayFunctions[indexPath.row].value.0 != 0) ? "\(arrayFunctions[indexPath.row].value.0) boletos de adulto" : ""
-            let ticketsChild = (arrayFunctions[indexPath.row].value.1 != 0) ? "\(arrayFunctions[indexPath.row].value.1) boletos de niños" : ""
+            let ticketAdults = (arrayFunctions[indexPath.row].value.0 != 0) ? "\(arrayFunctions[indexPath.row].value.0)x boletos de adulto" : ""
+            let ticketsChild = (arrayFunctions[indexPath.row].value.1 != 0) ? "\(arrayFunctions[indexPath.row].value.1)x boletos de niños" : ""
             
             cell.textLabel?.text = "Pelicula: \(arrayFunctions[indexPath.row].key.pelicula.titulo)\nCompraste: \(ticketAdults) \(ticketsChild)\nSala: \(arrayFunctions[indexPath.row].key.sala.tipo)\nTotal: \(Carrito.shared.totalPartial(index: indexPath.row))"
             cell.detailTextLabel?.text = "Horario: \(arrayFunctions[indexPath.row].key.hora_inicio) - \(arrayFunctions[indexPath.row].key.hora_fin)"
             
         }else{
             let indexCandy = indexPath.row - Carrito.shared.funcionesBoletosTotal.count
-            cell.textLabel?.text = "Compraste en dulceria: \(arrayCandy[indexCandy].value)  \(arrayCandy[indexCandy].key.name)\nTotal: \(Carrito.shared.totalPartialCandy(index: indexCandy))"
+            cell.textLabel?.text = "Compraste: \(arrayCandy[indexCandy].value)x  \(arrayCandy[indexCandy].key.name)\nTotal: \(Carrito.shared.totalPartialCandy(index: indexCandy))"
             cell.detailTextLabel?.text = ""
         }
         

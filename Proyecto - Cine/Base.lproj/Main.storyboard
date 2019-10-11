@@ -449,14 +449,14 @@
                                 </prototypes>
                             </tableView>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="OEm-mL-8Y8">
-                                <rect key="frame" x="20" y="635" width="374" height="41"/>
+                                <rect key="frame" x="20" y="632" width="374" height="48"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" red="1" green="0.40048047860000002" blue="0.4100188843" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="30"/>
                                 <color key="tintColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                <state key="normal" title="Calcular Total"/>
+                                <state key="normal" title="Comprar"/>
                                 <connections>
-                                    <action selector="calculateTotal:" destination="31n-FO-M8W" eventType="touchUpInside" id="YE8-AA-kg8"/>
+                                    <action selector="buy:" destination="31n-FO-M8W" eventType="touchUpInside" id="4cE-Iv-9XQ"/>
                                 </connections>
                             </button>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="carrito_imagen" translatesAutoresizingMaskIntoConstraints="NO" id="zDa-Ca-a2b">

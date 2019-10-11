@@ -11,6 +11,7 @@ import UIKit
 class Carrito {
     var funcionesBoletosTotal = [Funcion: (Int, Int)]()
     var dulcesCantidadTotal = [Dulce: Int]()
+    var tot: Int = 0
     static var shared = Carrito()
     
     func addFunction(item: Funcion, tickets: (Int,Int)){
@@ -21,7 +22,7 @@ class Carrito {
         dulcesCantidadTotal[item] = count
     }
     
-    func total() -> Int{
+    func total(){
         var count = 0
         for element in funcionesBoletosTotal{
             count += (element.value.0 * element.key.precioAdulto) + (element.value.1 * element.key.precioNino)
@@ -29,7 +30,7 @@ class Carrito {
         for element in dulcesCantidadTotal{
             count += element.value * element.key.price
         }
-        return count
+        tot = count
     }
     
     func totalPartial(index: Int) -> Int{
@@ -54,6 +55,12 @@ class Carrito {
         return alerta
         
     }
+    
+    func removeAll(){
+        funcionesBoletosTotal.removeAll()
+        dulcesCantidadTotal.removeAll()
+    }
+    
 }
 
 

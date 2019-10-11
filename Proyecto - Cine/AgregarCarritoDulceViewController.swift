@@ -56,10 +56,9 @@ class AgregarCarritoDulceViewController: UIViewController {
         if count == 0{
             present(Carrito.shared.buildAlert(msg: "Debes elegir al menos un elemento de la dulceria"), animated: true, completion: nil)
         }else{
-//            carrito.funcionesBoletosTotal[filterMovie] = (counterAdults, counterChild)
             Dulceria.shared.arrayCandy[index].cantidad -= count
-//            carrito.dulcesCantidadTotal[candy] = count
             Carrito.shared.addCandy(item: candy, count: count)
+            Carrito.shared.total()
             navigationController?.popViewController(animated: true)
         }
     }
