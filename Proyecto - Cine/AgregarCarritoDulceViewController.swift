@@ -17,34 +17,34 @@ class AgregarCarritoDulceViewController: UIViewController {
     @IBOutlet weak var precioLabel: UILabel!
     @IBOutlet weak var nombreLabel: UILabel!
     
-    var dulce: Dulce!
-    var contador = 0
+    var candy: Dulce!
+    var count = 0
     var index: Int!
     
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        index = getIndex(candy: dulce)
-        nombreLabel.text = dulce.name
-        imagen.image = UIImage(named: dulceria.dulces[index].imagen)
-        precioLabel.text = "Precio: $\(dulce.price)"
-        disponiblesLabel.text = "Disponibles: \(dulceria.dulces[index!].cantidad)"
+        index = getIndex(candy: candy)
+        nombreLabel.text = candy.name
+        imagen.image = UIImage(named: candy.imagen)
+        precioLabel.text = "Precio: $\(candy.price)"
+        disponiblesLabel.text = "Disponibles: \(Dulceria.shared.arrayCandy[index].cantidad)"
         
     }
 
     @IBAction func menosContador(_ sender: UIButton) {
-        if contador > 0{
-            contador -= 1
-            contadorLabel.text = String(contador)
+        if count > 0{
+            count -= 1
+            contadorLabel.text = String(count)
         }else{
             print("No se puede")
         }
     }
     
     @IBAction func masContador(_ sender: UIButton) {
-        if contador < dulceria.dulces[1].cantidad{
-            contador += 1
-            contadorLabel.text = String(contador)
+        if count < Dulceria.shared.arrayCandy[index].cantidad{
+            count += 1
+            contadorLabel.text = String(count)
         }else{
             print("No se puede")
         }
@@ -52,28 +52,19 @@ class AgregarCarritoDulceViewController: UIViewController {
     
     @IBAction func agregarCarrito(_ sender: UIButton) {
         
-//        print("Compraste \(contador) \(dulce.name) ")
-        if contador == 0{
-            buildAlert(msg: "Debes elegir al menos un boleto")
+//        print("Compraste \(count) \(candy.name) ")
+        if count == 0{
+            present(Carrito.shared.buildAlert(msg: "Debes elegir al menos un elemento de la dulceria"), animated: true, completion: nil)
         }else{
 //            carrito.funcionesBoletosTotal[filterMovie] = (counterAdults, counterChild)
-            dulceria.dulces[index!].cantidad -= contador
-            carrito.dulcesCantidadTotal[dulce] = contador
+            Dulceria.shared.arrayCandy[index].cantidad -= count
+//            carrito.dulcesCantidadTotal[candy] = count
+            Carrito.shared.addCandy(item: candy, count: count)
             navigationController?.popViewController(animated: true)
         }
     }
     
     func getIndex(candy: Dulce) -> Int?{
-        return dulceria.dulces.firstIndex(where: {$0 == candy})
-    }
-    
-    func buildAlert(msg: String){
-        let alerta = UIAlertController(title: "Error", message: msg, preferredStyle: .alert)
-        
-        let okAction = UIAlertAction(title: "Ok", style: .default, handler: nil)
-        
-        alerta.addAction(okAction)
-        
-        present(alerta, animated: true, completion: nil)
+        return Dulceria.shared.arrayCandy.firstIndex(where: {$0 == candy})
     }
 }

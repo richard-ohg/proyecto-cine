@@ -22,6 +22,14 @@ class CarteleraCollectionViewController: UICollectionViewController {
 //        self.collectionView!.register(UICollectionViewCell.self, forCellWithReuseIdentifier: reuseIdentifier)
 
         // Do any additional setup after loading the view.
+//        Inicialize functions
+        Cartelera.shared.addFunction(item:
+            Funcion(sala: salaNormal, hora_inicio: "14:00", hora_fin: "16:00", pelicula: jokerPelicula, cupo_disponible: salaNormal.cupo_max - 5, precioAdulto: 50, precioNino: 25),
+            Funcion(sala: salaVIP, hora_inicio: "15:00", hora_fin: "17:00", pelicula: jokerPelicula, cupo_disponible: salaVIP.cupo_max - 5, precioAdulto: 70, precioNino: 35),
+            Funcion(sala: salaPremium, hora_inicio: "15:00", hora_fin: "17:00", pelicula: jokerPelicula, cupo_disponible: salaPremium.cupo_max - 5, precioAdulto: 60, precioNino: 30),
+            Funcion(sala: salaPremium, hora_inicio: "12:00", hora_fin: "14:00", pelicula: itPelicula, cupo_disponible: salaPremium.cupo_max - 5, precioAdulto: 60, precioNino: 30),
+            Funcion(sala: salaNormal, hora_inicio: "18:00", hora_fin: "20:00", pelicula: itPelicula, cupo_disponible: salaNormal.cupo_max - 5, precioAdulto: 50, precioNino: 25),
+            Funcion(sala: salaNormal, hora_inicio: "12:30", hora_fin: "14:00", pelicula: doraPelicula, cupo_disponible: salaNormal.cupo_max - 5, precioAdulto: 50, precioNino: 25))
     }
     
     // MARK: - Navigation

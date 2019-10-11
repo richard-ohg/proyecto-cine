@@ -22,6 +22,13 @@ class DulceriaCollectionViewController: UICollectionViewController {
 //        self.collectionView!.register(UICollectionViewCell.self, forCellWithReuseIdentifier: reuseIdentifier)
 
         // Do any additional setup after loading the view.
+        
+        Dulceria.shared.addCandy(item: Dulce(name: "Palomitas", price: 28, imagen: "palomitas.jpg", cantidad: 5),
+                                 Dulce(name: "Refresco", price: 28, imagen: "refrescos.jpg", cantidad: 5),
+                                 Dulce(name: "M&M", price: 20, imagen: "m&m.jpg", cantidad: 5),
+                                 Dulce(name: "Nachos", price: 25, imagen: "nachos.jpg", cantidad: 5),
+                                 Dulce(name: "HotDog", price: 30, imagen: "hotdog.jpg", cantidad: 5))
+        
     }
 
     
@@ -31,7 +38,7 @@ class DulceriaCollectionViewController: UICollectionViewController {
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         let myIndex = collectionView.indexPathsForSelectedItems!.last!.item
         let dest = segue.destination as! AgregarCarritoDulceViewController
-        dest.dulce = dulceria.dulces[myIndex]
+        dest.candy = Dulceria.shared.arrayCandy[myIndex]
     }
  
 
@@ -45,14 +52,14 @@ class DulceriaCollectionViewController: UICollectionViewController {
 
     override func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         // #warning Incomplete implementation, return the number of items
-        return dulceria.dulces.count
+        return Dulceria.shared.arrayCandy.count
     }
 
     override func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: reuseIdentifier, for: indexPath) as! DulceCollectionViewCell
         
-        cell.label.text = dulceria.dulces[indexPath.row].name
-        cell.imagen.image = UIImage(named: dulceria.dulces[indexPath.row].imagen)
+        cell.label.text = Dulceria.shared.arrayCandy[indexPath.row].name
+        cell.imagen.image = UIImage(named: Dulceria.shared.arrayCandy[indexPath.row].imagen)
     
         return cell
     }

@@ -39,8 +39,17 @@ struct Funcion: Hashable{
 }
 
 
-struct Cartelera{
-    var funciones : [Funcion]
+class Cartelera{
+    var arrayFunctions = [Funcion]()
+    static var shared = Cartelera()
+    
+    func addFunction(item: Funcion...){
+        arrayFunctions.append(contentsOf: item)
+    }
+    
+    func filterForMovieName(movie: String) -> [Funcion] {
+        return arrayFunctions.filter({$0.pelicula.titulo == movie})
+    }
 }
 
 var salaVIP = Sala(tipo: "VIP", cupo_max: 50)
@@ -58,9 +67,7 @@ var funcionIT1 = Funcion(sala: salaPremium, hora_inicio: "12:00", hora_fin: "14:
 var funcionIT2 = Funcion(sala: salaNormal, hora_inicio: "18:00", hora_fin: "20:00", pelicula: itPelicula, cupo_disponible: salaNormal.cupo_max - 5, precioAdulto: 50, precioNino: 25)
 var funcionDora1 = Funcion(sala: salaNormal, hora_inicio: "12:30", hora_fin: "14:00", pelicula: doraPelicula, cupo_disponible: salaNormal.cupo_max - 5, precioAdulto: 50, precioNino: 25)
 
-
 var movies: [Pelicula] = [jokerPelicula, itPelicula, doraPelicula]
 
-var cartelera = Cartelera(funciones: [funcionJoker1, funcionJoker2, funcionJoker3, funcionIT1, funcionIT2, funcionDora1])
 
 

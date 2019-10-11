@@ -8,9 +8,18 @@
 
 import UIKit
 
-struct Carrito {
+class Carrito {
     var funcionesBoletosTotal = [Funcion: (Int, Int)]()
     var dulcesCantidadTotal = [Dulce: Int]()
+    static var shared = Carrito()
+    
+    func addFunction(item: Funcion, tickets: (Int,Int)){
+        funcionesBoletosTotal[item] = tickets
+    }
+    
+    func addCandy(item: Dulce, count: Int){
+        dulcesCantidadTotal[item] = count
+    }
     
     func total() -> Int{
         var count = 0
@@ -34,9 +43,18 @@ struct Carrito {
         
         return array[index].key.price * array[index].value
     }
+    
+    func buildAlert(msg: String) -> UIAlertController{
+        let alerta = UIAlertController(title: "Error", message: msg, preferredStyle: .alert)
+        
+        let okAction = UIAlertAction(title: "Ok", style: .default, handler: nil)
+        
+        alerta.addAction(okAction)
+        
+        return alerta
+        
+    }
 }
-
-var carrito = Carrito()
 
 
 

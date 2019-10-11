@@ -24,7 +24,7 @@ class AgregarCarritoPeliculasViewController: UIViewController {
 
         print(filterMovie.hora_inicio, filterMovie.hora_fin)
         index = getIndex(function: filterMovie)
-        availablesLabel.text = "Disponibles: \(cartelera.funciones[index!].cupo_disponible)"
+        availablesLabel.text = "Disponibles: \(filterMovie.cupo_disponible)"
     }
     
 
@@ -68,37 +68,17 @@ class AgregarCarritoPeliculasViewController: UIViewController {
 //        print("Quieres \(counterAdults) boletos de adultos y \(counterChild) boletos de niños")
 
         if counterChild == 0 && counterAdults == 0{
-            buildAlert(msg: "Debes elegir al menos un boleto")
+            present(Carrito.shared.buildAlert(msg: "Debes elegir al menos un boleto"), animated: true, completion: nil)
         }else{
-            cartelera.funciones[index!].cupo_disponible -= (counterAdults + counterChild)
-            carrito.funcionesBoletosTotal[filterMovie] = (counterAdults, counterChild)
+            Cartelera.shared.arrayFunctions[index].cupo_disponible -= (counterAdults + counterChild)
+//            carrito.funcionesBoletosTotal[filterMovie] = (counterAdults, counterChild)
+            Carrito.shared.addFunction(item: filterMovie, tickets: (counterAdults, counterChild))
         }
         
     }
     
     func getIndex(function: Funcion) -> Int?{
-        return cartelera.funciones.firstIndex(where: {$0 == function})
+        return Cartelera.shared.arrayFunctions.firstIndex(where: {$0 == function})
     }
-    
-    func buildAlert(msg: String){
-        let alerta = UIAlertController(title: "Error", message: msg, preferredStyle: .alert)
-        
-        let okAction = UIAlertAction(title: "Ok", style: .default, handler: nil)
-        
-        alerta.addAction(okAction)
-        
-        present(alerta, animated: true, completion: nil)
-    }
-    
-    
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
-    }
-    */
 
 }

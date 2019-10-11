@@ -19,8 +19,8 @@ class FuncionesTableViewController: UITableViewController {
         print("segunda vista")
         print(nameMovie!)
         tableView.rowHeight = 190
-//        tableView.estimatedRowHeight = 600
-        filterMovie = filterForMovieName(movie: nameMovie!)
+        
+        filterMovie = Cartelera.shared.filterForMovieName(movie: nameMovie!)
         
     }
     
@@ -50,6 +50,12 @@ class FuncionesTableViewController: UITableViewController {
         return cell
     }
  
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        let myIndex = tableView.indexPathForSelectedRow?.row
+        let dest = segue.destination as! AgregarCarritoPeliculasViewController
+        dest.filterMovie = filterMovie[myIndex!]
+        
+    }
 
     /*
     // Override to support conditional editing of the table view.
@@ -67,7 +73,7 @@ class FuncionesTableViewController: UITableViewController {
             tableView.deleteRows(at: [indexPath], with: .fade)
         } else if editingStyle == .insert {
             // Create a new instance of the appropriate class, insert it into the array, and add a new row to the table view
-        }    
+        }
     }
     */
 
@@ -90,17 +96,4 @@ class FuncionesTableViewController: UITableViewController {
     // MARK: - Navigation
 
     // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        let myIndex = tableView.indexPathForSelectedRow?.row
-        let dest = segue.destination as! AgregarCarritoPeliculasViewController
-        dest.filterMovie = filterMovie[myIndex!]
-        
-    }
-    
-    func filterForMovieName(movie: String) -> [Funcion] {
-        let filterMovie = cartelera.funciones.filter({$0.pelicula.titulo == movie})
-        return filterMovie
-    }
- 
-
 }
